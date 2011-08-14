@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: tracks
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  level      :text
+#
+
 class Track < ActiveRecord::Base
   
   LEVEL_EASY = "easy"
