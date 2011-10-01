@@ -1,30 +1,34 @@
 class UsersController < ApplicationController
-
   def new
-    @title = "Sign up"
     @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @user }
-    end
-
+    @title = "Sign up"
   end
-  
-  def index 
+
+  def index
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    @Title = @user.name
+    @title = @user.name
   end
-  
+
   def edit
     @user = User.find(params[:id])
-    @Title = @user.name
+    @title = @user.name
   end
-  
+
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+        flash[:success] = "Welcome to the Sample App!"
+        redirect_to @user
+      else
+        @title = "Sign up"
+        render 'new'
+    end
+  end
+
   # PUT /tracks/1
   # PUT /tracks/1.xml
   def update
