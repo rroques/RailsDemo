@@ -1,3 +1,7 @@
+* {
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
 .container {
   width: 710px;
   margin: 0 auto;
@@ -108,4 +112,12 @@ td.sidebar {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+ul.users {
+  margin-top: 1em;
+}
+
+.users li {
+  list-style: none;
 }
