@@ -6,7 +6,7 @@ development:
   database: railstutorial
   pool: 5
   username: remidb
-  password: lerems
+  password: remidb
   host: localhost
   port: 5433
 
