@@ -3,6 +3,7 @@ RemiTest::Application.routes.draw do
   resources :users
   resources :tracks
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :microposts, :only => [:create, :destroy]
   
   match '/', :to => 'pages#home'
   match '/index', :to => 'pages#home'

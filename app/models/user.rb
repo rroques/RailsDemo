@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
                        
   before_save :encrypt_password
   
+  has_many :microposts, :dependent => :destroy
+  
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end
@@ -46,6 +48,11 @@ class User < ActiveRecord::Base
   
   def name
     self.firstname + ' ' + self.lastname
+  end
+  
+  def feed
+    # This is preliminary. See Chapter 12 for the full implementation.
+    Micropost.where("user_id = ?", id)
   end
   
   private
