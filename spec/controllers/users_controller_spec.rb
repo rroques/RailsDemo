@@ -19,8 +19,8 @@ describe UsersController do
         @user = test_sign_in(Factory(:user))
         @users = [@user]
         30.times do
-          @users << Factory(:user, :firstname => Factory.next(:firstname),
-                                   :email => Factory.next(:email))
+          @users << Factory(:user, :firstname => FactoryGirl.generate(:firstname),
+                                   :email => FactoryGirl.generate(:email))
         end
       end
 
@@ -327,7 +327,7 @@ describe UsersController do
 
       before(:each) do
         @user = test_sign_in(Factory(:user))
-        @other_user = Factory(:user, :email => Factory.next(:email))
+        @other_user = Factory(:user, :email => FactoryGirl.generate(:email))
         @user.follow!(@other_user)
       end
 

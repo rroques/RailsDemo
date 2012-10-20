@@ -20,7 +20,7 @@ describe PagesController do
 
     before(:each) do
       @user = test_sign_in(Factory(:user))
-      other_user = Factory(:user, :email => Factory.next(:email))
+      other_user = Factory(:user, :email => FactoryGirl.generate(:email))
       other_user.follow!(@user)
     end
 
