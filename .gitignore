@@ -2,5 +2,9 @@
 db/*.sqlite3
 log/*.log
 tmp/
-
-
+*.log
+tmp
+.idea
+.sass-cache
+.git
+vendor
